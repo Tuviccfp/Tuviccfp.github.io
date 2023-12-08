@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Outlet, useNavigate } from 'react-router-
 import Home from './components/Home';
 import Projetos from './components/Projetos';
 import Contats from './components/Contato';
+import AnimationBanner from './components/AnimationBanner';
 
 const links = ['home', 'projetos', 'contato', ]
 

@@ -1,4 +1,4 @@
-import image from './VictorDev.png';
+import AnimationBanner from '../AnimationBanner';
 import './style.css';
 import {FileJs, FileSql, Database, Atom} from '@phosphor-icons/react'
 
@@ -6,7 +6,7 @@ export default function Home() {
     return (
         <section>
             <article className='article-infos'>
-                <img className='img-banner' src={image} alt='Banner victor'/>
+                <AnimationBanner />
                 <h4>Victor Cordeiro Fraguas Pires</h4>
                 <p>26 anos - RJ</p>
                 <span>Desenvolvedor Full Stack</span>

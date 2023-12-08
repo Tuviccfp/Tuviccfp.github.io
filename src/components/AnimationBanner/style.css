@@ -1,0 +1,58 @@
+.banner-background {
+    background-color: #15B5B0;
+    width: 250px;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+}
+.banner-background > div > span {
+    margin-left: 0em;
+    margin-right: 0em;
+    transition: margin-left 0.3s ease-out, margin-right 0.3s ease-out;
+}
+.banner-background:hover > div > span {
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+    transition: margin-left 0.3s ease-out, margin-right 0.3s ease-out;
+}
+.layout-chaves {
+    font-size: 75px;
+    font-weight: 900;
+    color: black;
+}
+
+#text-blink {
+    border: 1px solid transparent;
+}
+#text-blink::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+}
+#text-blink:hover::before {
+    opacity: 1;
+    visibility: visible;
+    animation: blink 1s infinite;
+    font-size: 40px;
+    color: black;
+    margin-top: -1.6em;
+}
+
+.name {
+    color: #FBE698;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+}
