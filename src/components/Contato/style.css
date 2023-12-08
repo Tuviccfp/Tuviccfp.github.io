@@ -1,0 +1,32 @@
+.list-socials {
+    list-style: none;
+    padding-inline-start: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.item-list-socials {
+    margin-right: 1em;
+    text-decoration: none;
+}
+.icons-socials {
+    width: 30px;
+    height: 30px;
+    color: white;
+}
+.item-list-mail {
+    position: relative;
+}
+.item-list-mail::before{
+    content: attr(data-tooltip);
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    margin-left: 2.3em;
+}
+.item-list-mail:hover::before{
+    opacity: 1;
+    visibility: visible;
+    margin-left: 2.3em;
+}
