@@ -4,9 +4,9 @@ import { BrowserRouter, Routes, Route, Outlet, useNavigate } from 'react-router-
 import Home from './components/Home';
 import Projetos from './components/Projetos';
 import Contats from './components/Contato';
-import AnimationBanner from './components/AnimationBanner';
+import Articles from './components/Article';
 
-const links = ['home', 'projetos', 'contato', ]
+const links = ['home', 'projetos', 'artigo', 'contato']
 
 const Layout = () => {
   const navigate = useNavigate();
@@ -52,45 +52,12 @@ export const Menu = () => {
           <Route index element={<Home />} />
           <Route path='home' element={< Home />}/>
           <Route path='projetos' element={<Projetos />}/>
+          <Route path='artigo' element={< Articles />} />
           <Route path='contato' element={<Contats />}/>
         </Route>
       </Routes>
     </BrowserRouter>
   )
 }
-
-// function App() {
-//   const [currentComponent, setCurrentComponent] = React.useState('Home');
-
-//   const dataNav = [
-//     'Home',
-//     'Projetos',
-//     'Contato'
-//   ]
-
-//   const renderComponents = () => {
-//     switch (currentComponent) {
-//       case 'Home':
-//         return <Home />;
-      
-//       case 'Projetos':
-//         return <Projetos />
-
-//       case 'Contato':
-//         return <Contats />
-//         default: 
-//         return null
-//     }
-//   }
-
-//   return (
-//     <div className="App">
-//       <div className='main'>
-//         <Nav data={dataNav} setCurrentComponent={setCurrentComponent}/>
-//         {renderComponents()}
-//       </div>
-//     </div>
-//   );
-// }
 
 export default Menu;
