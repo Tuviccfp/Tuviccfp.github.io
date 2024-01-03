@@ -1,12 +1,21 @@
-import * as React from 'react';
-import './App.css';
-import { BrowserRouter, Routes, Route, Outlet, useNavigate } from 'react-router-dom';
-import Home from './components/Home';
-import Projetos from './components/Projetos';
-import Contats from './components/Contato';
-import Articles from './components/Article';
+import * as React from "react";
+import "./App.css";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Outlet,
+  useNavigate,
+} from "react-router-dom";
+import Home from "./components/Home";
+import Projetos from "./components/Projetos";
+import Contats from "./components/Contato";
+import Articles from "./components/Article";
+import ArticleID from "./components/Article/ArticleId";
+import PrivateRoute from "./components/HOC";
+import Coments from "./components/Article/Coments";
 
-const links = ['home', 'projetos', 'artigo', 'contato']
+const links = ["home", "projetos", "artigo", "contato"];
 
 const Layout = () => {
   const navigate = useNavigate();
@@ -17,7 +26,7 @@ const Layout = () => {
   const onClick = (href) => {
     toggleMenu();
     navigate(href);
-  }
+  };
 
   return (
     <>
@@ -29,7 +38,7 @@ const Layout = () => {
             <a
               key={link}
               className={isMenuOpen ? "appear" : ""}
-              style={{animationDelay: `0.${index+1}s`}}
+              style={{ animationDelay: `0.${index + 1}s` }}
               onClick={() => onClick(link)}
             >
               {link}
@@ -41,23 +50,28 @@ const Layout = () => {
         <Outlet />
       </main>
     </>
-  )
-}
+  );
+};
 
 export const Menu = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={< Layout />}>
+        <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path='home' element={< Home />}/>
-          <Route path='projetos' element={<Projetos />}/>
-          <Route path='artigo' element={< Articles />} />
-          <Route path='contato' element={<Contats />}/>
+          <Route path="home" element={<Home />} />
+          <Route path="projetos" element={<Projetos />} />
+          <Route path="artigo" element={<Articles />} />
+          <Route path="contato" element={<Contats />} />
+          <Route path="/article/:id" element={<ArticleID />} />
+          <Route
+            path="comments"
+            element={<PrivateRoute element={<Coments />} />}
+          />
         </Route>
       </Routes>
     </BrowserRouter>
-  )
-}
+  );
+};
 
 export default Menu;
