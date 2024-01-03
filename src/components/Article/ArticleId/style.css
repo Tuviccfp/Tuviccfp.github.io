@@ -1,10 +1,9 @@
-.section-article-blog {
-    width: 100vw;
-    height: 100vh;
+.text-comment {
+    display: none;
 }
 .main-blog {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
 }
 .show-article-id {
@@ -54,6 +53,8 @@
     .section-article-blog {
         padding: 10px;
         margin: 10px;
+        width: 100vw;
+        height: 100vh;
     }
     .main-blog {
         display: flex;
@@ -76,6 +77,9 @@
         height: 35vh;
         margin-top: 3%;
         overflow-y: auto;
+    }
+    .text-comment {
+        display: block;
     }
 }
 .render-html-container {
