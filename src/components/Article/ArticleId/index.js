@@ -52,6 +52,7 @@ export default function ArticleID() {
             <p>{data.author}</p>
           </span>
         </article>
+        <p>Sessão de comentários:</p>
         <article className="show-comments">
           <ul className="list-comments">
             {comments.map((comment) => (

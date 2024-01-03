@@ -1,5 +1,5 @@
 #root {
-  overflow: hidden;
+  overflow-y: auto;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -9,6 +9,7 @@
   background-color: #1b1811;
   color: white;
   font-family: 'Roboto Mono', monospace;
+  overflow-x: hidden;
 }
 
 button {
