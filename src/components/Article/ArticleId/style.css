@@ -1,14 +1,10 @@
 .text-comment {
     display: none;
 }
-.section-article-blog {
-    overflow: hidden;
-}
 .main-blog {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
 }
 .show-article-id {
     background-color: snow;
